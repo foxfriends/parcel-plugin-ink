@@ -7,13 +7,12 @@ class InkAsset extends Asset {
     this.type = 'json';
   }
 
-  async parse() {
+  parse() {
     return inklecate({ inputFilepath: this.name });
   }
 
-  async generate() {
-    const code = JSON.stringify(this.ast.storyContent, null, 2);
-    return code;
+  generate() {
+    return JSON.stringify(this.ast.storyContent, null, 2);
   }
 }
 
