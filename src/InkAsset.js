@@ -1,4 +1,4 @@
-const inklecate = require('inklecate');
+const { inklecate } = require('inklecate');
 const { Asset } = require('parcel-bundler');
 
 class InkAsset extends Asset {
