@@ -1,0 +1,12 @@
+{
+  "name": "parcel-plugin-ink",
+  "version": "1.0.0",
+  "description": "Parcel plugin to compile an Ink script into JSON and import it into JavaScript",
+  "main": "src/index.js",
+  "author": "Cameron Eldridge",
+  "license": "ISC",
+  "peerDependencies": {
+    "inklecate": "^1.8.1",
+    "parcel-bundler": "^1.12.0"
+  }
+}
