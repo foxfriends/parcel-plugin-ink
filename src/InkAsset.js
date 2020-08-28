@@ -2,12 +2,11 @@ const { inklecate } = require('inklecate');
 const { Asset } = require('parcel-bundler');
 
 class InkAsset extends Asset {
-  type = 'js';
+  type = 'json';
 
   generate() {
-    console.log(this.name);
     return inklecate({ inputFilepath: this.name })
-      .then((result) => result.storyContent);
+      .then(({ storyContent }) => JSON.stringify(storyContent));
   }
 }
 
