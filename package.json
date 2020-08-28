@@ -5,6 +5,9 @@
   "main": "src/index.js",
   "author": "Cameron Eldridge",
   "license": "ISC",
+  "scripts": {
+    "prepare": "([ -f node_modules/inklecate/bin/inklecate.exe ] && chmod +x node_modules/inklecate/bin/inklecate.exe) || exit 0"
+  },
   "peerDependencies": {
     "inklecate": "^1.8.1",
     "parcel-bundler": "^1.12.0"
