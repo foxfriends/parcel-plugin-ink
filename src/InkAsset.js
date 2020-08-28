@@ -2,11 +2,14 @@ const { inklecate } = require('inklecate');
 const { Asset } = require('parcel-bundler');
 
 class InkAsset extends Asset {
-  type = 'json';
+  type = 'js';
+
+  parse() {
+    return inklecate({ inputFilepath: this.name });
+  }
 
   generate() {
-    return inklecate({ inputFilepath: this.name })
-      .then(({ storyContent }) => JSON.stringify(storyContent));
+    return `module.exports = ${JSON.stringify(this.ast.storyContent, null, 2)}`;
   }
 }
 
