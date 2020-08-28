@@ -4,7 +4,7 @@ const { Asset } = require('parcel-bundler');
 class InkAsset extends Asset {
   constructor(...args) {
     super(...args);
-    this.type = 'js';
+    this.type = 'json';
   }
 
   async parse() {
@@ -12,8 +12,8 @@ class InkAsset extends Asset {
   }
 
   async generate() {
-    const js = `module.exports = ${JSON.stringify(this.ast.storyContent, null, 2)}`;
-    return { js };
+    const code = JSON.stringify(this.ast.storyContent, null, 2);
+    return code;
   }
 }
 
